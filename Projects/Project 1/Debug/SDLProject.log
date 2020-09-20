@@ -1,4 +1,3 @@
 ﻿  main.cpp
-  ShaderProgram.cpp
-  正在生成代码...
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\main.cpp(146,80): warning C4305: “初始化”: 从“double”到“float”截断
   SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.exe

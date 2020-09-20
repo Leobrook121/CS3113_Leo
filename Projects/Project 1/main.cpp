@@ -22,12 +22,13 @@ SDL_Window* displayWindow;
 bool gameIsRunning = true;
 
 ShaderProgram program;
-glm::mat4 viewMatrix, projectionMatrix, lightMatrix, playerMatrix;
+glm::mat4 viewMatrix, projectionMatrix, riftMatrix, malphiteMatrix, vayneMatrix;
 
 
 
-GLuint lightTextureID;
-GLuint playerTextureID;
+GLuint riftTextureID;
+GLuint malphiteTextureID;
+GLuint vayneTextureID;
 
 
 GLuint LoadTexture(const char* filePath) {
@@ -55,7 +56,7 @@ GLuint LoadTexture(const char* filePath) {
 
 void Initialize() {
     SDL_Init(SDL_INIT_VIDEO);
-    displayWindow = SDL_CreateWindow("Let's dance!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+    displayWindow = SDL_CreateWindow("League of Legends!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
 
@@ -69,9 +70,9 @@ void Initialize() {
 
     viewMatrix = glm::mat4(1.0f);
     projectionMatrix = glm::ortho(-5.0f, 5.0f, -3.75f, 3.75f, -1.0f, 1.0f);
-    lightMatrix = glm::mat4(1.0f);
-    playerMatrix = glm::mat4(1.0f);
-    playerMatrix = glm::scale(playerMatrix, glm::vec3(0.5f, 0.5f, 0.5f));
+    riftMatrix = glm::mat4(1.0f);
+    malphiteMatrix = glm::mat4(1.0f);
+    vayneMatrix = glm::mat4(1.0f);
 
     program.SetProjectionMatrix(projectionMatrix);
     program.SetViewMatrix(viewMatrix);
@@ -82,11 +83,11 @@ void Initialize() {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     glEnable(GL_BLEND);
-    // Good setting for transparency
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    lightTextureID = LoadTexture("light.jpg");
-    playerTextureID = LoadTexture("ctg.png");
+    riftTextureID = LoadTexture("rift.jpg");
+    malphiteTextureID = LoadTexture("malphite.png");
+    vayneTextureID = LoadTexture("vayne.png");
 }
 
 void ProcessInput() {
@@ -100,23 +101,41 @@ void ProcessInput() {
 
 
 float lastTicks = 0.0f;
-float player_y = 0;
-float player_rotate = 0;
+float malphite_x = 0;
+float malphite_y = 0;
+float vayne_y = 0;
+float vayne_rotate = 0;
 
 void Update() { 
     float ticks = (float)SDL_GetTicks() / 1000.0f;
     float deltaTime = ticks - lastTicks;
     lastTicks = ticks;
 
-    player_y += 1.0f * deltaTime;
-    player_rotate += 45.0f * deltaTime;
+    if (20.0f - malphite_x > -4.0f)
+        malphite_x += 15.0f * deltaTime;
+    else {
+        vayne_y += 15.0f * deltaTime;
+        vayne_rotate += 450.0f * deltaTime;
+    }
 
-    lightMatrix = glm::mat4{ 1.0f };
 
-    playerMatrix = glm::mat4{ 1.0f };
-    playerMatrix = glm::scale(playerMatrix, glm::vec3(0.2f, 0.2f, 0.2f));
-    playerMatrix = glm::translate(playerMatrix, glm::vec3(-1.5f, player_y-10.0f, 0.0f));
-    playerMatrix = glm::rotate(playerMatrix, glm::radians(player_rotate), glm::vec3(0.0f, 0.0f, 1.0f));
+    if (9.0f - malphite_y > 0.0f)
+        malphite_y += 5.625f * deltaTime;
+
+    
+
+    riftMatrix = glm::mat4{ 1.0f };
+    riftMatrix = glm::scale(riftMatrix, glm::vec3(0.95f, 0.95f, 0.95f));
+
+    malphiteMatrix = glm::mat4{ 1.0f };
+    malphiteMatrix = glm::scale(malphiteMatrix, glm::vec3(0.17f, 0.17f, 0.17f));
+    malphiteMatrix = glm::translate(malphiteMatrix, glm::vec3(20.0f-malphite_x, 9.0f-malphite_y, 0.0f));
+
+    vayneMatrix = glm::mat4(1.0f);
+    vayneMatrix = glm::scale(vayneMatrix, glm::vec3(0.08f, 0.17f, 0.17f));
+    vayneMatrix = glm::translate(vayneMatrix, glm::vec3(-7.0f, vayne_y, 0.0f));
+    vayneMatrix = glm::rotate(vayneMatrix, glm::radians(vayne_rotate), glm::vec3(0.0f, 0.0f, 1.0f));
+
 }
 
 
@@ -124,7 +143,7 @@ void Update() {
 void Render() {
     glClear(GL_COLOR_BUFFER_BIT);
     
-    float vertices[] = { -4, -4, 4, -4, 4, 4, -4, -4, 4, 4, -4, 4 };
+    float vertices[] = { -6.4, -4, 6.4, -4, 6.4, 4,  -6.4, -4, 6.4, 4, -6.4, 4 };
     float texCoords[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
 
 
@@ -135,12 +154,16 @@ void Render() {
     glEnableVertexAttribArray(program.texCoordAttribute);
 
 
-    program.SetModelMatrix(lightMatrix);
-    glBindTexture(GL_TEXTURE_2D, lightTextureID);
+    program.SetModelMatrix(riftMatrix);
+    glBindTexture(GL_TEXTURE_2D, riftTextureID);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
-    program.SetModelMatrix(playerMatrix);
-    glBindTexture(GL_TEXTURE_2D, playerTextureID);
+    program.SetModelMatrix(malphiteMatrix);
+    glBindTexture(GL_TEXTURE_2D, malphiteTextureID);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+
+    program.SetModelMatrix(vayneMatrix);
+    glBindTexture(GL_TEXTURE_2D, vayneTextureID);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     glDisableVertexAttribArray(program.positionAttribute);
