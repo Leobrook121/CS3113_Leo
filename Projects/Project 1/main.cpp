@@ -86,7 +86,7 @@ void Initialize() {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     riftTextureID = LoadTexture("rift.jpg");
-    malphiteTextureID = LoadTexture("malphite.png");
+    malphiteTextureID = LoadTexture("ctg.png");
     vayneTextureID = LoadTexture("vayne.png");
 }
 
