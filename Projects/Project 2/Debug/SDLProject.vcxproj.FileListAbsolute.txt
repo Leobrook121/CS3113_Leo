@@ -1,0 +1,6 @@
+C:\Users\leobr\Desktop\CS3113_Leo\Templates\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Templates\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\Debug\SDLProject.pdb

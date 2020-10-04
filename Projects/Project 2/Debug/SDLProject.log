@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(188,105): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(200,100): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(212,99): warning C4305: “初始化”: 从“double”到“float”截断
+  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\Debug\SDLProject.exe
