@@ -1,5 +1,3 @@
-﻿  Entity.cpp
-  Entity.h
-  main.cpp
-  Generating Code...
+﻿  main.cpp
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\main.cpp(49,23): warning C4018: '<': signed/unsigned mismatch
   SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.exe

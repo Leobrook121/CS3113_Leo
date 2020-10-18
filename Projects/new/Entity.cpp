@@ -11,7 +11,8 @@ Entity::Entity()
     modelMatrix = glm::mat4(1.0f);
 }
 
-bool Entity::CheckCollision(Entity* other) {
+bool Entity::CheckCollision(Entity *other) {
+    if (isActive == false || other->isActive == false) return false;
 
     float xdist = fabs(position.x - other->position.x) - ((width + other->width) / 2.0f);
     float ydist = fabs(position.y - other->position.y) - ((height + other->height) / 2.0f);
@@ -21,7 +22,7 @@ bool Entity::CheckCollision(Entity* other) {
     return false;
 }
 
-void Entity::CheckCollisionsY(Entity* objects, int objectCount){
+void Entity::CheckCollisionsY(Entity *objects, int objectCount){
     for (int i = 0; i < objectCount; i++)
     {
         Entity* object = &objects[i];
@@ -32,17 +33,26 @@ void Entity::CheckCollisionsY(Entity* objects, int objectCount){
             if (velocity.y > 0) {
                 position.y -= penetrationY;
                 velocity.y = 0;
+                collidedTop = true;
             }
             else if (velocity.y < 0) {
                 position.y += penetrationY;
                 velocity.y = 0;
+                collidedBottom = true;
+                if (i == 6 || i == 7) {
+                    succeed = true;
+                }
+                else {
+                    fail = true;
+                }
             }
         }
     }
 }
 
 
-void Entity::CheckCollisionsX(Entity* objects, int objectCount){
+void Entity::CheckCollisionsX(Entity *objects, int objectCount){
+
     for (int i = 0; i < objectCount; i++)
     {
         Entity* object = &objects[i];
@@ -53,17 +63,28 @@ void Entity::CheckCollisionsX(Entity* objects, int objectCount){
             if (velocity.x > 0) {
                 position.x -= penetrationX;
                 velocity.x = 0;
+                collidedRight = true;
+                fail = true;
             }
             else if (velocity.x < 0) {
                 position.x += penetrationX;
                 velocity.x = 0;
+                collidedLeft = true;
+                fail = true;
             }
         }
     }
 }
 
 
-void Entity::Update(float deltaTime, Entity* platforms, int platformCount){
+void Entity::Update(float deltaTime, Entity *platforms, int platformCount){
+    if (isActive == false) return;
+
+    collidedTop = false;
+    collidedBottom = false;
+    collidedLeft = false;
+    collidedRight = false;
+
     if (animIndices != NULL) {
         if (glm::length(movement) != 0) {
             animTime += deltaTime;
@@ -108,7 +129,7 @@ void Entity::Update(float deltaTime, Entity* platforms, int platformCount){
     modelMatrix = glm::translate(modelMatrix, position);
 }
 
-void Entity::DrawSpriteFromTextureAtlas(ShaderProgram* program, GLuint textureID, int index){
+void Entity::DrawSpriteFromTextureAtlas(ShaderProgram *program, GLuint textureID, int index){
     float u = (float)(index % animCols) / (float)animCols;
     float v = (float)(index / animCols) / (float)animRows;
     
@@ -134,7 +155,9 @@ void Entity::DrawSpriteFromTextureAtlas(ShaderProgram* program, GLuint textureID
     glDisableVertexAttribArray(program->texCoordAttribute);
 }
 
-void Entity::Render(ShaderProgram* program) {
+void Entity::Render(ShaderProgram *program) {
+
+    if (isActive == false) return;
 
     program->SetModelMatrix(modelMatrix);
     

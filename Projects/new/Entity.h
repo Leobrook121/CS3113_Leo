@@ -21,7 +21,16 @@ public:
     float width = 1;
     float height = 1;
 
+    bool isActive = true;
     bool jump = false;
+    bool collidedTop = false;
+    bool collidedBottom = false;
+    bool collidedLeft = false;
+    bool collidedRight = false;
+
+    bool fail = false;
+    bool succeed = false;
+
     float jumpPower = 0;
 
     float speed;
