@@ -4,3 +4,5 @@ C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.exe
 C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.pdb
 C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.exe
 C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 5 example\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 5 example\Debug\SDLProject.pdb

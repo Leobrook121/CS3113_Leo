@@ -1,0 +1,7 @@
+﻿  Entity.cpp
+  Entity.h
+  main.cpp
+  ShaderProgram.cpp
+  Generating Code...
+Debug\Entity.obj : warning LNK4042: object specified more than once; extras ignored
+  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 8 example\Debug\SDLProject.exe

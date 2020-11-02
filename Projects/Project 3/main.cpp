@@ -5,6 +5,7 @@
 #endif
 
 #define GL_GLEXT_PROTOTYPES 1
+#include <SDL_mixer.h>
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include "glm/mat4x4.hpp"
@@ -33,6 +34,8 @@ ShaderProgram program;
 glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
 
 GLuint fontTextureID;
+Mix_Music* music;
+Mix_Chunk* bounce;
 
 
 void DrawText(ShaderProgram* program, GLuint fontTextureID, std::string text,
@@ -119,6 +122,10 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
     
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
+
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("doublydoo.mp3");
+    Mix_PlayMusic(music, -1);
     
     viewMatrix = glm::mat4(1.0f);
     modelMatrix = glm::mat4(1.0f);

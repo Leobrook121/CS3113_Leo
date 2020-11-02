@@ -1,3 +1,8 @@
-﻿  main.cpp
-C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\main.cpp(49,23): warning C4018: '<': signed/unsigned mismatch
-  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.exe
+﻿  Entity.cpp
+  Entity.h
+  main.cpp
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 5 example\main.cpp(49,23): warning C4018: '<': signed/unsigned mismatch
+  ShaderProgram.cpp
+  Generating Code...
+Debug\Entity.obj : warning LNK4042: object specified more than once; extras ignored
+  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 5 example\Debug\SDLProject.exe
