@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 7 example\main.cpp(196,105): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 7 example\main.cpp(208,100): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 7 example\main.cpp(220,99): warning C4305: 'initializing': truncation from 'double' to 'float'
+  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 7 example\Debug\SDLProject.exe

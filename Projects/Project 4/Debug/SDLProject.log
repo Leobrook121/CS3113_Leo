@@ -1,1 +1,9 @@
-﻿  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\Debug\SDLProject.exe
+﻿  Entity.cpp
+  Entity.h
+  main.cpp
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\main.cpp(69,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\main.cpp(203,33): warning C4305: '=': truncation from 'double' to 'float'
+  ShaderProgram.cpp
+  Generating Code...
+Debug\Entity.obj : warning LNK4042: object specified more than once; extras ignored
+  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\Debug\SDLProject.exe

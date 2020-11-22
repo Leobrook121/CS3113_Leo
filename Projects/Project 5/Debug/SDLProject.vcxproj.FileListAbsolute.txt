@@ -1,0 +1,16 @@
+C:\Users\leobr\Desktop\CS3113_Leo\Templates\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Templates\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 1\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 3\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\new\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\new\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 4\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 8 example\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 8 example\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 9 example\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\week 9 example\Debug\SDLProject.pdb
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 5\Debug\SDLProject.exe
+C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 5\Debug\SDLProject.pdb
