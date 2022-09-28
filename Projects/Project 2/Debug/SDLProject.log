@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(185,105): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(197,100): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\main.cpp(209,99): warning C4305: 'initializing': truncation from 'double' to 'float'
-  SDLProject.vcxproj -> C:\Users\leobr\Desktop\CS3113_Leo\Projects\Project 2\Debug\SDLProject.exe
+C:\Users\a\Desktop\Leobrook\NYU\Senior year\Fall\CS3113_Leo\Projects\Project 2\main.cpp(5,10): fatal  error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  ShaderProgram.cpp
+C:\Users\a\Desktop\Leobrook\NYU\Senior year\Fall\CS3113_Leo\Projects\Project 2\ShaderProgram.h(4,11): fatal  error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  Generating Code...
